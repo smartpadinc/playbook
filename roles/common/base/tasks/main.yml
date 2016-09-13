@@ -1,0 +1,23 @@
+- name: Ensure bash, OpenSSL, and libssl are the latest versions
+  yum: pkg={{ item }} state=latest update_cache=yes
+  with_items:
+    - bash
+    - openssl
+  tags: packages
+
+- name: Install Development Tools
+  become: true
+  yum: name="@Development tools" state=installed
+  tags: packages
+
+- name: Install base packages
+  yum: pkg={{ item }} state=latest update_cache=yes
+  with_items:
+    - git-core
+    - openssl-devel
+    - sqlite-devel
+    - bzip2-devel
+    - python34
+    - python34-devel.x86_64
+    - python-pip
+  tags: packages

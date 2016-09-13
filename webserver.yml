@@ -1,0 +1,11 @@
+---
+- hosts: development
+  become_user: leodiaz
+  remote_user: leodiaz
+  connection: ssh
+  gather_facts: no
+  vars_files:
+    - env_vars/development.yml
+
+  roles:
+    - common/base

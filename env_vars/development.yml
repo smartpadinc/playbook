@@ -1,0 +1,6 @@
+root_user: leodiaz
+user: vagrant
+group: vagrant
+projectroot: /var/www
+virtualenvdir: /var/www/env
+requirementstxt: /vagrant/playbook/development/files/requirements.txt
