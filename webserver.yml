@@ -9,3 +9,5 @@
 
   roles:
     - common/base
+    - common/postgres
+    - common/nginx
