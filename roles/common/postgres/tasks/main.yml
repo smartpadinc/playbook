@@ -1,0 +1,11 @@
+- name: Install database requirements
+  yum: pkg={{ item }} state=latest update_cache=yes
+  with_items:
+    - postgresql-server
+    - postgresql-contrib
+    - postgresql-devel
+  notify:
+    - Create database cluster
+    - Enable postgres
+    - Restart postgresql
+  tags: packages

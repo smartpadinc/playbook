@@ -1,0 +1,8 @@
+- name: Create database cluster
+  command: /usr/bin/postgresql-setup initdb
+
+- name: Enable postgres
+  command: /usr/bin/systemctl enable postgresql
+
+- name: Restart postgresql
+  service: name=postgresql enabled=yes state=restarted
