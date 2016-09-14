@@ -4,3 +4,7 @@ group: vagrant
 projectroot: /var/www
 virtualenvdir: /var/www/env
 requirementstxt: /vagrant/playbook/development/files/requirements.txt
+
+db_name: smartpaddb
+db_user: devuser
+db_pass: demo123

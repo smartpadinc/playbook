@@ -1,7 +1,7 @@
 ---
 - hosts: development
-  become_user: leodiaz
-  remote_user: leodiaz
+  become_user: root
+  remote_user: root
   connection: ssh
   gather_facts: no
   vars_files:
@@ -11,3 +11,5 @@
     - common/base
     - common/postgres
     - common/nginx
+
+    - development/db
