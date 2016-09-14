@@ -7,7 +7,7 @@
                  lc_ctype='en_US.UTF-8'
                  template='template0'
                  state=present
-  tags: dbdb
+  tags: create_db
 
 
 - name: Ensure user has access to the database
@@ -18,7 +18,7 @@
                    password={{ db_pass }}
                    priv=ALL
                    state=present
-  tags: dbdb
+  tags: create_db
 
 
 - name: Ensure user does not have unnecessary privileges
@@ -27,4 +27,4 @@
   postgresql_user: name={{ db_user }}
                    role_attr_flags=NOSUPERUSER
                    state=present
-  tags: dbdb
+  tags: create_db
