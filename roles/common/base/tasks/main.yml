@@ -1,4 +1,4 @@
-- name: Ensure bash, OpenSSL, and libssl are the latest versions
+- name: Ensure bash and OpenSSL are the latest versions
   yum: pkg={{ item }} state=latest update_cache=yes
   with_items:
     - bash
@@ -6,7 +6,6 @@
   tags: packages
 
 - name: Install Development Tools
-  become: true
   yum: name="@Development tools" state=installed
   tags: packages
 
@@ -20,4 +19,5 @@
     - python34
     - python34-devel.x86_64
     - python-pip
+    - python-psycopg2
   tags: packages
