@@ -1,9 +1,19 @@
 
 git_repository: git@github.com:smartpadinc/smrtpadv1_back.git
-root_user: leodiaz
+root_user: root
 user: vagrant
 group: vagrant
 
+# --- Postgres
 db_name: smartpaddb
 db_user: devuser
 db_pass: demo123
+
+# --- Directories
+project_dir: /vagrant/smrtpadv1_back
+base_dir: /var/www
+virtualenv_dir: /var/www/env
+
+# --- nginx configuration for project
+listen_port: 8093
+server_name: smartpadv1-back.local
