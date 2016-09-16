@@ -1,0 +1,2 @@
+- name: Activate virtualenv
+  command: . {{virtualenv_dir}}/smartpad/bin/activate
