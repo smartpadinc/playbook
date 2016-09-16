@@ -1,0 +1,4 @@
+- name: Clone project
+  git: repo={{git_repository}} dest={{project_dir}}
+  notify: Install requirements.txt
+  tags: app
