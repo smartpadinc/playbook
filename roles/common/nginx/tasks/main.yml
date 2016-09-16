@@ -1,3 +1,13 @@
 - name: Install Nginx
   yum: name=nginx state=installed update_cache=yes
-  tags: packages
+  tags: packages, nginx
+
+- name: Create the Nginx configuration file
+  template: src=smrtpd_nginx.conf.j2
+            dest={{ base_dir }}/smrtpd_nginx.conf
+  tags: nginx
+
+- name: Symlink configuration file
+  file: src={{base_dir}}/smrtpd_nginx.conf dest=/etc/nginx/conf.d/smrtpd_nginx.conf state=link
+  notify: Restart nginx
+  tags: nginx
