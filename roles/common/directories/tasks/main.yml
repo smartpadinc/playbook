@@ -1,0 +1,6 @@
+- name: Ensure project directories exists
+  file: dest={{ item }}  state=directory
+  with_items:
+    - /var/www/
+    - /var/www/env/
+  tags: directories
