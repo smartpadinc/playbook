@@ -1,0 +1,4 @@
+- name: Create the uwsgi configuration file
+  template: src=smrtpd_uwsgi.ini.j2
+            dest={{ base_dir }}/smrtpd_uwsgi.ini
+  tags: uwsgi

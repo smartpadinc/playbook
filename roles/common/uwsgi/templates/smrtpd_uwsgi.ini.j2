@@ -1,0 +1,14 @@
+[uwsgi]
+
+# Django-related settings
+chdir         = {{project_dir}}
+module        = smrtpadv1_back.wsgi
+home          = {{virtualenv_dir}}/smartpad
+# touch-reload  = /vagrant/smrtpadv1_back/manage.py
+
+# process-related settings
+master        = true
+processes     = 10
+socket        = {{base_dir}}/smartpad.sock
+chmod-socket  = 666
+vacuum        = true
