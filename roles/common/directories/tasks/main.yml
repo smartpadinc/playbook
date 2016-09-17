@@ -1,5 +1,5 @@
 - name: Ensure project directories exists
-  file: dest={{ item }}  state=directory
+  file: dest={{ item }}  state=directory mode=0775
   with_items:
     - "{{ base_dir }}"
     - "{{ virtualenv_dir }}"
