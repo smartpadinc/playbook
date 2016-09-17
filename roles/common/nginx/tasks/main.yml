@@ -1,6 +1,13 @@
+- name: Ensure selinux is disabled
+  selinux: state=disabled
+  tags: nginx
+
 - name: Install Nginx
   yum: name=nginx state=installed update_cache=yes
   tags: packages, nginx
+
+- name: Ensure Nginx service is started
+  service: name=nginx state=started enabled=yes
 
 - name: Create the Nginx configuration file
   template: src=smrtpd_nginx.conf.j2
@@ -8,6 +15,6 @@
   tags: nginx
 
 - name: Symlink configuration file
-  file: src={{base_dir}}/smrtpd_nginx.conf dest=/etc/nginx/conf.d/smrtpd_nginx.conf state=link
-  notify: Restart nginx
+  file: src={{base_dir}}/smrtpd_nginx.conf dest=/etc/nginx/conf.d/smrtpd_nginx.conf state=link mode=0775
+  notify: Reload nginx
   tags: nginx
