@@ -8,6 +8,7 @@ group: vagrant
 db_name: smartpaddb
 db_user: devuser
 db_pass: demo123
+db_host: 192.168.1.100
 
 # --- Directories
 project_dir: /vagrant/smrtpadv1_back
