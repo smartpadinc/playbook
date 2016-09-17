@@ -4,8 +4,16 @@
     - postgresql-server
     - postgresql-contrib
     - postgresql-devel
-  notify:
-    - Create database cluster
-    - Enable postgres
-    - Restart postgresql
-  tags: packages
+  tags: packages, postgres
+
+- name: Create database cluster
+  command: /usr/bin/postgresql-setup initdb
+  tags: packages, postgres
+
+- name: Enable postgres
+  command: /usr/bin/systemctl enable postgresql
+  tags: packages, postgres
+
+- name: Restart postgresql
+  service: name=postgresql enabled=yes state=restarted
+  tags: packages, postgres
