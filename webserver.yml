@@ -15,5 +15,5 @@
     - common/pip
     - common/uwsgi
 
-    - development/db
     - development/backend
+    - development/db
