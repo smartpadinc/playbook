@@ -1,13 +1,13 @@
 - name: Clone project
-  git: repo={{git_repository}} dest={{project_dir}}
+  git: repo={{git_repository}} dest={{project_dir}} accept_hostkey=yes
   notify: Install requirements.txt
-  tags: backend
+  tags: app, backend
 
 - name: Create environmental variable
   template: src=env.j2
             dest={{ base_dir }}/.env
-  tags: backend
+  tags: app, backend
 
 - name: Install envvars
   pip: name=envvars virtualenv={{virtualenv_dir}}/smartpad virtualenv_python=/usr/bin/python3.4
-  tags: backend
+  tags: app, backend
