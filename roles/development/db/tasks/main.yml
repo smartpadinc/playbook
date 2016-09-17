@@ -25,6 +25,6 @@
   become: true
   become_user: postgres
   postgresql_user: name={{ db_user }}
-                   role_attr_flags=NOSUPERUSER
+                   role_attr_flags=NOSUPERUSER,CREATEDB
                    state=present
   tags: create_db
