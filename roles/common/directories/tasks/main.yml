@@ -4,4 +4,4 @@
     - "{{ base_dir }}"
     - "{{ virtualenv_dir }}"
     - "{{ project_dir }}"
-  tags: app
+  tags: directories

@@ -3,11 +3,11 @@
   with_items:
     - bash
     - openssl
-  tags: packages
+  tags: packages, base
 
 - name: Install Development Tools
   yum: name="@Development tools" state=installed
-  tags: packages
+  tags: packages, base
 
 - name: Install base packages
   yum: pkg={{ item }} state=latest update_cache=yes
@@ -20,4 +20,4 @@
     - python34-devel.x86_64
     - python-pip
     - python-psycopg2
-  tags: packages
+  tags: packages, base
